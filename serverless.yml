@@ -1,0 +1,31 @@
+service: glue-crawler-automation
+
+## This is just an example of serverless framework for data resources. 
+
+plugins:
+  - serverless-plugin-typescript
+
+custom:
+  config: ${file(env/${self:provider.stage}-${self:provider.region}.yml)}
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: 
+  region:
+  iamRoleStatements:
+    - Effect: Allow
+      Action: iam:PassRole
+      Resource: ${self:custom.config.glueRoleArn}
+    - Effect: Allow
+      Action:
+        - glue:createCrawler
+        - glue:startCrawler
+      Resource: "*"
+
+functions:
+  create-crawlers:
+    handler: src/handler.handler
+    environment:
+      DATABASE_NAME: ${self:custom.config.database}
+      ROLE: ${self:custom.config.glueRoleArn}
