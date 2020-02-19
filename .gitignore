@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+data/
+src/bin/LOCAL_BUCKET/
+src/bin/awscliv2.zip
