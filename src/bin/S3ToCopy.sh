@@ -12,5 +12,6 @@ S3_BUCKET='s3://dse-cohort5-group1/'
 # we currently only have access to us-east-1 (virginia)
 AWS_REGION='us-east-1'
 
-# copies data from local computer to s3. Can also be done with python Boto3 sdk
-aws s3 cp $LOCAL_BUCKET $S3_BUCKET --recursive --profile=ucsd --region=us-east-1
+# copies data from s3 to local. Can also be done with python Boto3 sdk
+aws s3 cp $S3_BUCKET LOCAL_BUCKET --recursive --profile=ucsd --region=us-east-1
+
