@@ -25,13 +25,10 @@ A personalized ‘shop-by-style’ experience using PyTorch on Amazon SageMaker 
   - [Table of Contents](#table-of-contents)
   - [Architecture](#architecture)
   - [Components](#components)
+  - [Models](#models)
   - [Usage](#usage)
-    - [Deployment](#deployment)
     - [Installation](#installation)
-  - [Documentation](#documentation)
     - [Serverless ETl](#serverless-etl)
-  - [Revisions](#revisions)
-  - [Refrences](#refrences)
  
  
 ## Architecture
@@ -53,29 +50,62 @@ The following components refer to modules located in the `src` dir.
 | 8 |  Recommender API | Programmatic access to the system |
 | 9 | Recommender Web Site | User interface to the recommender system. |
  
+
+## Models
+The following models that have been trained and stored under the `src/models/` directory. Model versions and benchmarks are evaluated using MSE for rating predictions and include execution times. Three progressive datasets are used to measure the scalability as the model progress to productiion. Models can be evaluated locally using the 100k dataset. All other evaluations are executed in an aws cloud envoinrment. The `src/cf/` directory containes scripts used for automated deployments. 
+
+
+
+**Dataset:** Amazon_Clothing_Shoes_and_Jewelry_100k
+
+| Method                             | Accuracy            | Time                 | 
+| ---------------------------------- | ------------------- | ------------------   | 
+| Baseline                           | 1.1630374059367858  | 0.004736900329589844 |
+| Weighted Ratings Heuristic         | 1.40054874327075    | 1.8000781536102295  | 
+| Product KNN                        | 1.2433453027128647  | 5.375831842422485   | 
+| User KNN                           | 1.4744309982698536  | 84.04179906845093  |
+
+
+```
+cosine_sim(𝑢,𝑣)=∑𝑖∈𝐼𝑢𝑣𝑟𝑢𝑖⋅𝑟𝑣𝑖∑𝑖∈𝐼𝑢𝑣𝑟2𝑢𝑖‾‾‾‾‾‾‾√⋅∑𝑖∈𝐼𝑢𝑣𝑟2𝑣𝑖‾‾‾‾‾‾‾√
+or
+
+cosine_sim(𝑖,𝑗)=∑𝑢∈𝑈𝑖𝑗𝑟𝑢𝑖⋅𝑟𝑢𝑗∑𝑢∈𝑈𝑖𝑗𝑟2𝑢𝑖‾‾‾‾‾‾‾√⋅∑𝑢∈𝑈𝑖𝑗𝑟2𝑢𝑗‾‾‾‾‾‾‾√
+```
+
+**Dataset:** Amazon_Clothing_Shoes_and_Jewelry_1M
+
+| Method                             | Accuracy            | Time                 | 
+| ---------------------------------- | ------------------- | ------------------   | 
+| Baseline                           |                     |                      |
+| Weighted Ratings Heuristic         |                     |                      | 
+| Product KNN                        |                     |                      | 
+| User KNN                           |                     |                      |
+
+
+**Dataset:** Amazon_Clothing_Shoes_and_Jewelry
+
+| Method                             | Accuracy            | Time                 | 
+| ---------------------------------- | ------------------- | ------------------   | 
+| Baseline                           |                     |                      |
+| Weighted Ratings Heuristic         |                     |                      | 
+| Product KNN                        |                     |                      | 
+| User KNN                           |                     |                      |
+
  
 ## Usage
- 
-### Deployment
- 
+  
 ### Installation
 - Install spark
 - requirments.txt
 - aws cli (optional)
 - Neo4J DB
  
-## Documentation
+
 ### Serverless ETl
 Crawler output for raw metadata.
 ![ETL2](./img/RawMetaDataCralwerOutput.png)
  
 Transforming raw data for analysis.
 ![ETL](./img/MetaDataTransform.png)
- 
- 
- 
-## Revisions
- 
-## Refrences
- 
  
