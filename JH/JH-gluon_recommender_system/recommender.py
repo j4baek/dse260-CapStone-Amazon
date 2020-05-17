@@ -150,11 +150,10 @@ def save(model, model_dir):
 ######
 
 def prepare_train_data(training_dir):
-#     f = os.listdir(training_dir)
-#     df = pd.read_csv(os.path.join(training_dir, f[0]), delimiter='\t', error_bad_lines=False)
-    print(training_dir)
-    df = pd.read_csv(training_dir)
-#     df = pd.read_pickle(training_dir)
+    f = os.listdir(training_dir)
+    print("JH: ", os.path.join(training_dir, f[0]))
+#     df = pd.read_csv(os.path.join(training_dir, f[0]), error_bad_lines=False)
+    df = pd.read_csv(os.path.join(training_dir, f[0]), delimiter='\t', error_bad_lines=False)
     df = df[['customer_id', 'product_id', 'star_rating']]
     customers = df['customer_id'].value_counts()
     products = df['product_id'].value_counts()

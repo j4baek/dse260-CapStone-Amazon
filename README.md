@@ -1,4 +1,3 @@
-
 # Amazon Recommender System Application
 This is a Recommender System application for Amazon customers.
  
