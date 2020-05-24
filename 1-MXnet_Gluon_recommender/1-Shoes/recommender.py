@@ -115,7 +115,7 @@ def execute(train_iter, test_iter, net, trainer, epochs, ctx):
                                                                    eval_net(train_iter, net, ctx, loss_function),
                                                                    eval_net(test_iter, net, ctx, loss_function)))
         print("MSE-ON-TEST={}".format(eval_net(test_iter, net, ctx, loss_function)))
-        logger.info("MSE-ON-TEST={}" % (eval_net(test_iter, net, ctx, loss_function)))
+        logger.info("MSE-ON-TEST={}".format(eval_net(test_iter, net, ctx, loss_function)))
         
     print("end of training")
     return net
