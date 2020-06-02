@@ -1,0 +1,9 @@
+embeddings {
+  tensor_name: "features_1:0"
+  metadata_path: "/Users/yeongchoi/Documents/DSE260B/ImageModel/Final_model/10K_samples/embedding-logs/metadata_4_classes.tsv"
+  sprite {
+    image_path: "/Users/yeongchoi/Documents/DSE260B/ImageModel/Final_model/10K_samples/embedding-logs/sprite_4_classes.png"
+    single_image_dim: 224
+    single_image_dim: 224
+  }
+}

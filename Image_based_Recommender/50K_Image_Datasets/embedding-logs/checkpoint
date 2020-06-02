@@ -1,0 +1,2 @@
+model_checkpoint_path: "/Users/yeongchoi/Documents/DSE260B/ImageModel/Final_model/50K_samples/embedding-logs/images_4_classes.ckpt"
+all_model_checkpoint_paths: "/Users/yeongchoi/Documents/DSE260B/ImageModel/Final_model/50K_samples/embedding-logs/images_4_classes.ckpt"
