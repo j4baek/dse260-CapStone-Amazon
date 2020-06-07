@@ -34,8 +34,7 @@ A personalized ‘shop-by-style’ experience using DeepLearning on Amazon.
 The following models that have been trained and stored under the individual directories.
 - Keras-DeepRecommender-Shoes
 - Image_based_recommender
-- word2vec_model.zip
-
+- NLP_TFIDF_weighted_w2v
 
 ## GraphDB
 The Neo4j graph databse is used to store the results of the models and provide recomendations in real time. Example code for deploymnet and queries can be found under `GraphDB` directory.
