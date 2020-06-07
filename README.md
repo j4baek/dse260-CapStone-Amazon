@@ -33,6 +33,8 @@ A personalized ‘shop-by-style’ experience using DeepLearning on Amazon.
 ## Models
 The following models that have been trained and stored under the individual directories.
 - Image_based_recommender
+- Keras Deep Learning Shoes
+
 
 ## GraphDB
 The Neo4j graph databse is used to store the results of the models and provide recomendations in real time. Example code for deploymnet and queries can be found under `GraphDB` directory.
