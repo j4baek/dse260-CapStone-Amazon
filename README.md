@@ -39,3 +39,8 @@ The following models that have been trained and stored under the individual dire
 ## GraphDB
 The Neo4j graph databse is used to store the results of the models and provide recomendations in real time. Example code for deploymnet and queries can be found under `GraphDB` directory.
 
+## DEMO
+
+[UCSD MAS DSE Cohort 5 Group 1: Amazon Recommender System Demo](https://www.youtube.com/watch?time_continue=1&v=pZfKgp95roM&feature=emb_logo)
+
+[UCSD MAS DSE Cohort 5 Group 1: Amazon Recommender System Presentation](https://docs.google.com/presentation/d/1licWthgnQseopXZrKBLZxB9iCzwOYQt5NasFcm4IFeg/edit?usp=sharing)
