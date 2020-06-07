@@ -1,0 +1,9 @@
+pandas==
+gzip==
+json-dateutil== 
+csv==
+numpy==
+collections==
+pyspark==
+gensim==
+pyarrow==
