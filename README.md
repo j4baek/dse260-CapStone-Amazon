@@ -32,8 +32,9 @@ A personalized ‘shop-by-style’ experience using DeepLearning on Amazon.
 
 ## Models
 The following models that have been trained and stored under the individual directories.
+- Keras-DeepRecommender-Shoes
 - Image_based_recommender
-- Keras Deep Learning Shoes
+- word2vec_model.zip
 
 
 ## GraphDB
